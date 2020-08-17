@@ -158,7 +158,7 @@ const UserShowView = ({ className, ...rest }) => {
                   </Grid>
                   <Grid item md={6} xs={12}>
                     <Typography color="textPrimary" variant="body1">
-                      <strong>Endereço: </strong> {user.adress}
+                      <strong>Endereço: </strong> {user.address}
                     </Typography>
                   </Grid>
                 </Grid>

@@ -19,6 +19,43 @@ import { useNavigate } from 'react-router-dom';
 import api from 'src/service/api';
 
 import { useSnackbar } from 'notistack';
+import MaskedInput from 'react-text-mask';
+
+function TextMaskCustom(props) {
+  const { inputRef, ...other } = props;
+
+  return (
+    <MaskedInput
+      {...other}
+      ref={ref => {
+        inputRef(ref ? ref.inputElement : null);
+      }}
+      mask={[
+        '(',
+        /\d/,
+        /\d/,
+        ')',
+        ' ',
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/,
+        '-',
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/
+      ]}
+      placeholderChar={'_'}
+      showMask
+    />
+  );
+}
+
+TextMaskCustom.propTypes = {
+  inputRef: PropTypes.func.isRequired
+};
 
 const useStyles = makeStyles(() => ({
   modal: {
@@ -36,7 +73,7 @@ const UserModalForm = ({ className, open, handleClose, user, ...rest }) => {
     name: '',
     email: '',
     phone: '',
-    adress: ''
+    address: ''
   });
 
   useEffect(() => {
@@ -127,19 +164,22 @@ const UserModalForm = ({ className, open, handleClose, user, ...rest }) => {
                     label="Telefone"
                     name="phone"
                     onChange={handleChange}
-                    type="number"
+                    type="text"
                     value={values.phone}
                     variant="outlined"
+                    InputProps={{
+                      inputComponent: TextMaskCustom
+                    }}
                   />
                 </Grid>
                 <Grid item md={12} xs={12}>
                   <TextField
                     fullWidth
                     label="Endereço"
-                    name="adress"
+                    name="address"
                     onChange={handleChange}
                     required
-                    value={values.adress}
+                    value={values.address}
                     variant="outlined"
                   />
                 </Grid>

@@ -65,7 +65,7 @@ const Results = ({ className, users, handleOpen, handleDelete, ...rest }) => {
                     </Box>
                   </TableCell>
                   <TableCell>{user.email}</TableCell>
-                  <TableCell>{`${user.adress}`}</TableCell>
+                  <TableCell>{`${user.address}`}</TableCell>
                   <TableCell>{user.phone}</TableCell>
                   <TableCell>
                     <IconButton
