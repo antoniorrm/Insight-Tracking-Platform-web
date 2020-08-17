@@ -31,7 +31,7 @@ const useStyles = makeStyles(() => ({
 const UserModalForm = ({ className, open, handleClose, user, ...rest }) => {
   const classes = useStyles();
   const navigate = useNavigate();
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
   const [values, setValues] = useState({
     name: '',
     email: '',

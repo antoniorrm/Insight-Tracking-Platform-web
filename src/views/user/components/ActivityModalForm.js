@@ -50,7 +50,7 @@ const ActivityModalForm = ({
   ...rest
 }) => {
   const classes = useStyles();
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
   const [values, setValues] = useState({
     type: 'CURSO',

@@ -45,7 +45,7 @@ const UserShowView = ({ className, ...rest }) => {
   const classes = useStyles();
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
   const [activities, setActivities] = React.useState([]);
   const [activity, setActivity] = React.useState({});

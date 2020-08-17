@@ -24,7 +24,7 @@ const UserListView = () => {
   const [users, setUsers] = useState([]);
 
   const navigate = useNavigate();
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
   const [open, setOpen] = React.useState(false);
   const [searchReset, setSearchReset] = useState('');
